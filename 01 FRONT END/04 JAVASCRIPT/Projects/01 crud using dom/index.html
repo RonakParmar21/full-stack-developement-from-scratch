@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud Using DOM</title>
+</head>
+<body>
+    <div>
+        <h1>Dom Crud</h1>
+        <input type="text" id="userInput" />
+        <button class="btnAdd">Add</button>
+        <div class="listItems"></div>
+    </div>
+
+    <script>
+        let inputElement = document.getElementById("userInput");
+        let btnElement = document.querySelector(".btnAdd");
+        let listElement = document.querySelector(".listItems");
+
+        const addItem = () => {
+            console.log(inputElement.value);
+
+            let pElem = document.createElement("p");
+            pElem.textContent = inputElement.value;
+            console.log(pElem);
+            listElement.append(pElem);
+
+            inputElement.value = "";
+        };
+
+        btnElement.addEventListener("click", ()=>{
+            addItem();
+        });
+
+        listElement.addEventListener("click",(event) =>{
+            console.log(event.target);
+            let currentElement = event.target;
+            currentElement.remove();
+        });
+    </script>
+</body>
+</html>
