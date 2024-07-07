@@ -1,0 +1,1 @@
+console.log("Introduction of js from external js")
