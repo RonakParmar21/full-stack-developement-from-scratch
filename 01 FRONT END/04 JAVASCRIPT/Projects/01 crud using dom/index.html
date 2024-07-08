@@ -12,20 +12,16 @@
         <button class="btnAdd">Add</button>
         <div class="listItems"></div>
     </div>
-
     <script>
         let inputElement = document.getElementById("userInput");
         let btnElement = document.querySelector(".btnAdd");
         let listElement = document.querySelector(".listItems");
 
         const addItem = () => {
-            console.log(inputElement.value);
-
             let pElem = document.createElement("p");
             pElem.textContent = inputElement.value;
             console.log(pElem);
             listElement.append(pElem);
-
             inputElement.value = "";
         };
 
