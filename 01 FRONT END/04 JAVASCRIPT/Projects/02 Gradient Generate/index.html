@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS - Gradient Generator</title>
+    <style>
+        .copyCode {
+            background-image: linear-gradient(to right, rgb(92, 145, 229), rgb(152, 63, 198))
+        }
+    </style>
 </head>
 <body>
     <section>
@@ -11,6 +16,7 @@
             <button id="myButton">#051937</button>
             <button id="myButton2">#008793</button>
             <h2>Copy Your code</h2>
+            <button id="myButton3">get</button>
             <div class="copyCode" style="width: 100vw; height: 50px; border: 1px solid black;">
                 background-image: linear-gradient(to right, rgb(92, 145, 229), rgb(152, 63, 198))
             </div>
@@ -20,6 +26,7 @@
     <script>
         let btn1 = document.getElementById('myButton');
         let btn2 = document.getElementById('myButton2');
+        let btn3 = document.getElementById('myButton3');
         let copyDiv = document.getElementById('copyCode');
         let rgb1 = "#004773";
         let rgb2 = "#54d542";
@@ -40,7 +47,8 @@
             console.log(rgb1);
             btn1.innerText = rgb1;
             document.body.style.backgroundImage = `linear-gradient(to right, ${rgb1}, ${rgb2})`;
-            copyDiv.innerHTML = `background-image: linear-gradient(to right, ${rgb1}, ${rgb2})`;
+            // copyDiv.innerHTML = `background-image: linear-gradient(to right, rgb(${rgb1}), rgb(${rgb2}))`;
+            return `background-image: linear-gradient(to right, ${rgb1}, ${rgb2})`;
         };  
 
         const handleButton2 = () => {
@@ -48,15 +56,22 @@
             console.log(rgb2);
             btn1.innerText = rgb2;
             document.body.style.backgroundImage = `linear-gradient(to right, ${rgb1}, ${rgb2})`;
-            copyDiv.innerHTML = `background-image: linear-gradient(to right, ${rgb1}, ${rgb2})`;
+            //copyDiv.innerHTML = `background-image: linear-gradient(to right, ${rgb1}, ${rgb2})`;
+            copyDiv.innerHTML = `background-image: linear-gradient(to right, rgb(${rgb1}), rgb(${rgb2}))`;
         };  
+
+        const getColor = () =>{
+            // navigator
+        }
 
         btn1.addEventListener("click", handleButton1);
         btn2.addEventListener("click", handleButton2);
+        btn2.addEventListener("click", getColor);
 
         copyDiv.addEventListener("click", ()=>{
             navigator.clipboard.writeText(copyDiv.innerText);
         });
+        
     </script>
 </body>
 </html>
